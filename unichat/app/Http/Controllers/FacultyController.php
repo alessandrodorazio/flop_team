@@ -18,10 +18,19 @@ class FacultyController extends Controller
     }
 
     public function store(Request $request, $department_id) {
-        $faculty = new Faculty;
-        $faculty->name = $request->name;
-        $faculty->department_id = $department_id;
-        $faculty->save();
+        if(auth()->user()->getType() == 0)
+            return "I tuoi diritti non ti permettono di creare una facoltà";
+        else{
+            $faculty = new Faculty;
+            if (auth()->user()->getType() == 10) {
+                $faculty->name = $request->name;
+                $faculty->department_id = $department_id;
+            } else {
+                $faculty->name = $request->name;
+                $faculty->department_id = auth()->user()->getDepartmentId();
+                }
+            $faculty->save();
+        }
 
         return (new Responser())->success()->item('faculty', $faculty)->response();
     }
@@ -31,9 +40,15 @@ class FacultyController extends Controller
 
     }
 
-    public function delete($faculty_id)
+    public function destroy($faculty_id)
     {
         $faculty = Faculty::find($faculty_id);
-        $faculty->delete;
+        if(! $faculty) {
+            return "Facoltà non trovata";
+        }
+        else {
+            $faculty->delete;
+            return "Facoltà eliminata";
+        }
     }
 }

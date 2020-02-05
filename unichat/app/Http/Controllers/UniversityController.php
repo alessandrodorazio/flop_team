@@ -19,9 +19,13 @@ class UniversityController extends Controller
     }
 
     public function store(Request $request) {
-        $university = new University;
-        $university->name = $request->name;
-        $university->save();
+        if(auth()->user()->getType() == 10) {
+            $university = new University;
+            $university->name = $request->name;
+            $university->save();
+        }
+        else
+            return "I tuoi diritti non ti permettono di creare un'università";
 
         return (new Responser())->success()->item('university', $university)->response();
     }
@@ -33,6 +37,12 @@ class UniversityController extends Controller
     public function delete($university_id)
     {
         $university = University::find($university_id);
-        $university->delete;
+        if(! $university){
+            return "Università non trovata";
+        }
+        else{
+            $university->delete;
+            return "Università eliminata";
+        }
     }
 }

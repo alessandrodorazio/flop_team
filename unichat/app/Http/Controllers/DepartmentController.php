@@ -16,11 +16,20 @@ class DepartmentController extends Controller
 
     }
 
-    public function store(Request $request) {
-        $department = new Department;
-        $department->name = $request->name;
-        $department->university_id = auth()->user()->getUniversityId();
-        $department->save();
+    public function store(Request $request, $university_id) {
+        if(auth()->user()->getType() == 0)
+            return "I tuoi diritti non ti permettono di creare una facoltà";
+        else {
+            $department = new Department;
+            if (auth()->user()->getType() == 10) {
+                $department->name = $request->name;
+                $department->university_id = $university_id;
+            } else{
+                $department->name = $request->name;
+                $department->university_id = auth()->user()->getUniversityId();
+            }
+            $department->save();
+        }
 
         return (new Responser())->success()->item('department', $department)->response();
     }
@@ -29,9 +38,15 @@ class DepartmentController extends Controller
 
     }
 
-    public function delete($department_id)
+    public function destroy($department_id)
     {
         $department = Department::find($department_id);
-        $department->delete;
+        if(! $department) {
+            return "Dipartimento non trovato";
+        }
+        else {
+            $department->delete;
+            return "Dipartimento eliminato";
+        }
     }
 }
