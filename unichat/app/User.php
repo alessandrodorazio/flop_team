@@ -93,4 +93,16 @@ class User extends Authenticatable implements JWTSubject
             return $this->university_id;
         }
     }
+
+    public function getType()
+    {
+        return $this->type;
+    }
+
+    public function getDepartmentId()
+    {
+        $faculty = Faculty::find($this->faculty_id);
+        $department = Department::find($faculty->department_id);
+        return $department->id;
+    }
 }
