@@ -34,12 +34,15 @@ class RoomController extends Controller
         return (new Responser())->success()->item('room', $room)->response();
     }
 
-    public function update() {
-
+    public function update(Request $request, $room_id) {
+        $room = Room::find($room_id);
+        $room->update($request->all());
     }
 
-    public function delete() {
-
+    public function delete($room_id)
+    {
+        $room = Room::find($room_id);
+        $room->delete;
     }
 
     public function find() {

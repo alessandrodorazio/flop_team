@@ -18,15 +18,21 @@ class UniversityController extends Controller
 
     }
 
-    public function store() {
+    public function store(Request $request) {
+        $university = new University;
+        $university->name = $request->name;
+        $university->save();
 
+        return (new Responser())->success()->item('university', $university)->response();
     }
 
     public function update() {
 
     }
 
-    public function delete() {
-
+    public function delete($university_id)
+    {
+        $university = University::find($university_id);
+        $university->delete;
     }
 }
