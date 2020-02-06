@@ -18,7 +18,7 @@ class FacultyController extends Controller
     }
 
     public function store(Request $request, $department_id) {
-        if(auth()->user()->getType() == 0)
+        if(auth()->user()->getType() == 1)
             return "I tuoi diritti non ti permettono di creare una facoltà";
         else{
             $faculty = new Faculty;
@@ -47,7 +47,7 @@ class FacultyController extends Controller
             return "Facoltà non trovata";
         }
         else {
-            $faculty->delete;
+            $faculty->delete();
             return "Facoltà eliminata";
         }
     }

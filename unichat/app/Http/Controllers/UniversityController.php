@@ -41,7 +41,7 @@ class UniversityController extends Controller
             return "Università non trovata";
         }
         else{
-            $university->delete;
+            $university->delete();
             return "Università eliminata";
         }
     }
