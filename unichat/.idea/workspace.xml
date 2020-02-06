@@ -1,7 +1,322 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="cd89d7a6-9ee4-45ed-93a8-7d75a1cc3c76" name="Default Changelist" comment="" />
+    <list default="true" id="cd89d7a6-9ee4-45ed-93a8-7d75a1cc3c76" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/resources/views/auth/login.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/auth/register.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/home.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/layout/app.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/messages/search.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/rooms/index.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/rooms/show.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/users/index.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/users/show.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/.all-contributorsrc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/.editorconfig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/.eslintrc.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/.gitattributes" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/.github/ISSUE_TEMPLATE/bug_report.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/.github/ISSUE_TEMPLATE/feature_request.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/.github/PULL_REQUEST_TEMPLATE.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/.github/issue-close-app.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/.github/lock.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/.nvmrc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/.prettierignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/.prettierrc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/.stylelintrc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/.travis.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/CODE_OF_CONDUCT.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/CONTRIBUTING.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/Changelog.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/LICENSE.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/app/.htaccess" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/app/.nginx.conf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/app/app.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/app/components/A/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/app/components/A/tests/index.test.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/app/components/Button/A.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/app/components/Button/StyledButton.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/app/components/Button/Wrapper.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/app/components/Button/buttonStyles.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/app/components/Button/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/app/components/Button/tests/A.test.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/app/components/Button/tests/StyledButton.test.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/app/components/Button/tests/Wrapper.test.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/app/components/Button/tests/index.test.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/app/components/Footer/Wrapper.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/app/components/Footer/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/app/components/Footer/messages.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/app/components/Footer/tests/Wrapper.test.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/app/components/Footer/tests/__snapshots__/index.test.js.snap" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/app/components/Footer/tests/index.test.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/app/components/H1/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/app/components/H1/tests/index.test.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/app/components/H2/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/app/components/H2/tests/index.test.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/app/components/H3/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/app/components/H3/tests/index.test.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/app/components/Header/A.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/app/components/Header/HeaderLink.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/app/components/Header/Img.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/app/components/Header/NavBar.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/app/components/Header/banner.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/app/components/Header/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/app/components/Header/messages.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/app/components/Header/tests/A.test.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/app/components/Header/tests/Img.test.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/app/components/Header/tests/__snapshots__/A.test.js.snap" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/app/components/Header/tests/__snapshots__/Img.test.js.snap" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/app/components/Header/tests/__snapshots__/index.test.js.snap" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/app/components/Header/tests/index.test.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/app/components/Img/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/app/components/Img/tests/index.test.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/app/components/IssueIcon/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/app/components/IssueIcon/tests/index.test.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/app/components/List/Ul.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/app/components/List/Wrapper.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/app/components/List/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/app/components/List/tests/Ul.test.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/app/components/List/tests/Wrapper.test.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/app/components/List/tests/index.test.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/app/components/ListItem/Item.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/app/components/ListItem/Wrapper.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/app/components/ListItem/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/app/components/ListItem/tests/Item.test.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/app/components/ListItem/tests/Wrapper.test.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/app/components/ListItem/tests/index.test.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/app/components/LoadingIndicator/Circle.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/app/components/LoadingIndicator/Wrapper.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/app/components/LoadingIndicator/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/app/components/LoadingIndicator/tests/Circle.test.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/app/components/LoadingIndicator/tests/Wrapper.test.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/app/components/LoadingIndicator/tests/__snapshots__/index.test.js.snap" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/app/components/LoadingIndicator/tests/index.test.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/app/components/Toggle/Select.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/app/components/Toggle/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/app/components/Toggle/tests/Select.test.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/app/components/Toggle/tests/__snapshots__/index.test.js.snap" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/app/components/Toggle/tests/index.test.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/app/components/ToggleOption/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/app/components/ToggleOption/tests/__snapshots__/index.test.js.snap" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/app/components/ToggleOption/tests/index.test.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/app/configureStore.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/app/containers/App/actions.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/app/containers/App/constants.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/app/containers/App/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/app/containers/App/reducer.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/app/containers/App/selectors.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/app/containers/App/tests/__snapshots__/index.test.js.snap" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/app/containers/App/tests/actions.test.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/app/containers/App/tests/index.test.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/app/containers/App/tests/reducer.test.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/app/containers/App/tests/selectors.test.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/app/containers/HomePage/AtPrefix.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/app/containers/HomePage/CenteredSection.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/app/containers/HomePage/Form.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/app/containers/HomePage/Input.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/app/containers/HomePage/Loadable.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/app/containers/HomePage/Section.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/app/containers/HomePage/actions.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/app/containers/HomePage/constants.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/app/containers/HomePage/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/app/containers/HomePage/messages.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/app/containers/HomePage/reducer.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/app/containers/HomePage/saga.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/app/containers/HomePage/selectors.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/app/containers/HomePage/tests/AtPrefix.test.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/app/containers/HomePage/tests/CenteredSection.test.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/app/containers/HomePage/tests/Form.test.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/app/containers/HomePage/tests/Input.test.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/app/containers/HomePage/tests/Section.test.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/app/containers/HomePage/tests/__snapshots__/index.test.js.snap" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/app/containers/HomePage/tests/__snapshots__/saga.test.js.snap" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/app/containers/HomePage/tests/actions.test.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/app/containers/HomePage/tests/index.test.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/app/containers/HomePage/tests/reducer.test.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/app/containers/HomePage/tests/saga.test.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/app/containers/HomePage/tests/selectors.test.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/app/containers/LanguageProvider/actions.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/app/containers/LanguageProvider/constants.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/app/containers/LanguageProvider/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/app/containers/LanguageProvider/reducer.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/app/containers/LanguageProvider/selectors.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/app/containers/LanguageProvider/tests/actions.test.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/app/containers/LanguageProvider/tests/index.test.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/app/containers/LanguageProvider/tests/reducer.test.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/app/containers/LanguageProvider/tests/selectors.test.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/app/containers/NotFoundPage/Loadable.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/app/containers/NotFoundPage/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/app/containers/NotFoundPage/messages.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/app/containers/NotFoundPage/tests/index.test.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/app/global-styles.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/app/i18n.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/app/images/favicon.ico" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/app/images/icon-512x512.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/app/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/app/reducers.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/app/tests/i18n.test.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/app/tests/store.test.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/app/translations/de.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/app/translations/en.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/app/utils/checkStore.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/app/utils/constants.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/app/utils/history.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/app/utils/injectReducer.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/app/utils/injectSaga.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/app/utils/loadable.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/app/utils/reducerInjectors.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/app/utils/request.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/app/utils/sagaInjectors.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/app/utils/tests/checkStore.test.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/app/utils/tests/injectReducer.test.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/app/utils/tests/injectSaga.test.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/app/utils/tests/reducerInjectors.test.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/app/utils/tests/request.test.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/app/utils/tests/sagaInjectors.test.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/appveyor.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/babel.config.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/docs/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/docs/css/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/docs/css/linting.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/docs/css/remove.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/docs/css/sanitize.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/docs/forks/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/docs/general/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/docs/general/commands.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/docs/general/components.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/docs/general/debugging.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/docs/general/deployment.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/docs/general/editor.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/docs/general/faq.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/docs/general/files.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/docs/general/gotchas.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/docs/general/introduction.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/docs/general/remove.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/docs/general/server-configs.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/docs/general/webstorm-debug.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/docs/general/webstorm-eslint.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/docs/general/workflow.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/docs/js/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/docs/js/async-components.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/docs/js/i18n.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/docs/js/immer.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/docs/js/redux-saga.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/docs/js/redux.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/docs/js/remove.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/docs/js/reselect.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/docs/js/routing.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/docs/maintenance/dependency.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/docs/testing/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/docs/testing/component-testing.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/docs/testing/remote-testing.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/docs/testing/unit-testing.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/internals/generators/component/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/internals/generators/component/index.js.hbs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/internals/generators/component/loadable.js.hbs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/internals/generators/component/messages.js.hbs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/internals/generators/component/test.js.hbs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/internals/generators/container/actions.js.hbs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/internals/generators/container/actions.test.js.hbs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/internals/generators/container/constants.js.hbs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/internals/generators/container/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/internals/generators/container/index.js.hbs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/internals/generators/container/messages.js.hbs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/internals/generators/container/reducer.js.hbs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/internals/generators/container/reducer.test.js.hbs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/internals/generators/container/saga.js.hbs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/internals/generators/container/saga.test.js.hbs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/internals/generators/container/selectors.js.hbs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/internals/generators/container/selectors.test.js.hbs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/internals/generators/container/test.js.hbs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/internals/generators/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/internals/generators/language/add-locale-data.hbs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/internals/generators/language/app-locale.hbs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/internals/generators/language/format-translation-messages.hbs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/internals/generators/language/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/internals/generators/language/intl-locale-data.hbs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/internals/generators/language/polyfill-intl-locale.hbs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/internals/generators/language/translation-messages.hbs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/internals/generators/language/translations-json.hbs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/internals/generators/utils/componentExists.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/internals/mocks/cssModule.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/internals/mocks/image.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/internals/scripts/analyze.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/internals/scripts/clean.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/internals/scripts/extract-intl.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/internals/scripts/generate-templates-for-linting.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/internals/scripts/helpers/checkmark.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/internals/scripts/helpers/get-npm-config.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/internals/scripts/helpers/progress.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/internals/scripts/helpers/xmark.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/internals/scripts/npmcheckversion.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/internals/templates/app.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/internals/templates/configureStore.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/internals/templates/containers/App/constants.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/internals/templates/containers/App/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/internals/templates/containers/App/selectors.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/internals/templates/containers/App/tests/__snapshots__/index.test.js.snap" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/internals/templates/containers/App/tests/index.test.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/internals/templates/containers/App/tests/selectors.test.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/internals/templates/containers/HomePage/Loadable.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/internals/templates/containers/HomePage/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/internals/templates/containers/HomePage/messages.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/internals/templates/containers/HomePage/tests/__snapshots__/index.test.js.snap" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/internals/templates/containers/HomePage/tests/index.test.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/internals/templates/containers/LanguageProvider/actions.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/internals/templates/containers/LanguageProvider/constants.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/internals/templates/containers/LanguageProvider/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/internals/templates/containers/LanguageProvider/reducer.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/internals/templates/containers/LanguageProvider/selectors.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/internals/templates/containers/NotFoundPage/Loadable.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/internals/templates/containers/NotFoundPage/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/internals/templates/containers/NotFoundPage/messages.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/internals/templates/containers/NotFoundPage/tests/__snapshots__/index.test.js.snap" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/internals/templates/containers/NotFoundPage/tests/index.test.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/internals/templates/global-styles.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/internals/templates/i18n.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/internals/templates/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/internals/templates/reducers.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/internals/templates/tests/i18n.test.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/internals/templates/tests/store.test.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/internals/templates/translations/en.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/internals/templates/utils/checkStore.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/internals/templates/utils/constants.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/internals/templates/utils/history.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/internals/templates/utils/injectReducer.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/internals/templates/utils/injectSaga.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/internals/templates/utils/loadable.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/internals/templates/utils/reducerInjectors.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/internals/templates/utils/sagaInjectors.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/internals/templates/utils/tests/checkStore.test.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/internals/templates/utils/tests/injectReducer.test.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/internals/templates/utils/tests/injectSaga.test.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/internals/templates/utils/tests/reducerInjectors.test.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/internals/templates/utils/tests/sagaInjectors.test.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/internals/testing/test-bundler.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/internals/webpack/webpack.base.babel.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/internals/webpack/webpack.dev.babel.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/internals/webpack/webpack.prod.babel.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/jest.config.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/package-lock.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/server/argv.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/server/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/server/logger.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/server/middlewares/addDevMiddlewares.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/server/middlewares/addProdMiddlewares.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/server/middlewares/frontendMiddleware.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/server/port.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/unichat.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/unichat.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/DepartmentController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/DepartmentController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/welcome.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -12,6 +327,9 @@
     <execution>
       <executable />
     </execution>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="PackageJsonUpdateNotifier">
     <dismissed value="$PROJECT_DIR$/package.json" />
@@ -120,9 +438,12 @@
       <path value="$PROJECT_DIR$/vendor/barryvdh/reflection-docblock" />
       <path value="$PROJECT_DIR$/vendor/beyondcode/laravel-er-diagram-generator" />
       <path value="$PROJECT_DIR$/vendor/phpdocumentor/graphviz" />
+      <path value="$PROJECT_DIR$/vendor/asm89/stack-cors" />
+      <path value="$PROJECT_DIR$/vendor/barryvdh/laravel-cors" />
     </include_path>
   </component>
   <component name="ProjectId" id="1VAds3MINqz9lZkZaQRmWXNxtB5" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
@@ -130,9 +451,10 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="Vertica" />
-    <property name="last_opened_file_path" value="$USER_HOME$/Lavoro/Promobulls/crm-backend" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -180,6 +502,11 @@
       <workItem from="1577027298425" duration="1534000" />
       <workItem from="1579190495779" duration="494000" />
       <workItem from="1579250236186" duration="261000" />
+      <workItem from="1580553736740" duration="126000" />
+      <workItem from="1580668706705" duration="10000" />
+      <workItem from="1581006294352" duration="390000" />
+      <workItem from="1581007956299" duration="284000" />
+      <workItem from="1581008394247" duration="1910000" />
     </task>
     <servers />
   </component>
@@ -199,6 +526,10 @@
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state x="449" y="348" key="NewPhpClassDialog/0.0.1680.1050@0.0.1680.1050" timestamp="1576844913346" />
+    <state x="639" y="437" key="NewPhpFileDialog" timestamp="1581009268866">
+      <screen x="0" y="0" width="1680" height="1050" />
+    </state>
+    <state x="639" y="437" key="NewPhpFileDialog/0.0.1680.1050@0.0.1680.1050" timestamp="1581009268866" />
     <state x="341" y="164" key="SettingsEditor" timestamp="1576700257510">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
@@ -207,9 +538,9 @@
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state x="498" y="287" width="683" height="476" key="find.popup/0.0.1680.1050@0.0.1680.1050" timestamp="1576952040669" />
-    <state x="505" y="233" width="670" height="676" key="search.everywhere.popup" timestamp="1576953282103">
+    <state x="505" y="233" width="838" height="676" key="search.everywhere.popup" timestamp="1581008445994">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state x="505" y="233" width="670" height="676" key="search.everywhere.popup/0.0.1680.1050@0.0.1680.1050" timestamp="1576953282103" />
+    <state x="505" y="233" width="838" height="676" key="search.everywhere.popup/0.0.1680.1050@0.0.1680.1050" timestamp="1581008445994" />
   </component>
 </project>
