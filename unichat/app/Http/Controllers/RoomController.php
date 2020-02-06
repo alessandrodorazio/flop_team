@@ -49,7 +49,7 @@ class RoomController extends Controller
             return "Stanza non trovata";
         }
         else {
-            $room->delete;
+            $room->delete();
             return "Stanza eliminata";
         }
     }

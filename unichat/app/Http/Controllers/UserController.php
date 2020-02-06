@@ -32,7 +32,7 @@ class UserController extends Controller
 
     public function delete($user_id) {
         $user = User::find($user_id);
-        $user->delete;
+        $user->delete();
     }
 
     public function filterUsers(Request $request) {
