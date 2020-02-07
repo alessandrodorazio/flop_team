@@ -14,7 +14,13 @@ class DatabaseSeeder extends Seeder
     {
         // $this->call(UsersTableSeeder::class);
         factory(App\Dictionary::class, 50)->create();
-        factory(App\University::class, 5)->create();
+        DB::table('universities')->insert([
+            ['name' => 'Università degli studi dell\'Aquila'],
+            ['name' => 'Università degli studi di Teramo'],
+            ['name' => 'Politecnico di Milano'],
+            ['name' => 'Politecnico di Torino'],
+            ['name' => 'La sapienza']
+        ]);
         factory(App\Department::class, 20)->create();
         factory(App\Faculty::class, 100)->create();
         factory(App\User::class, 5000)->create();

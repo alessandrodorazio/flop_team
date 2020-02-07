@@ -28,7 +28,7 @@ Route::post('/users/filter', 'UserController@filterUsers');
 
 Route::resource('/universities', 'UniversityController')->only(['index', 'show', 'update', 'delete']);
 
-Route::resource('/departments', 'DepartmentController')->only(['index', 'show', 'store', 'update', 'delete']);
+Route::resource('/universities/{university_id}/departments', 'DepartmentController')->only(['index', 'show', 'store', 'update', 'delete']);
 
 Route::resource('/faculties', 'FacultyController')->only(['index', 'show', 'store', 'update', 'delete']);
 

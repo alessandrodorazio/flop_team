@@ -84,6 +84,7 @@ class User extends Authenticatable implements JWTSubject
 
     public function getUniversityId()
     {
+        return 1;
         if($this->type === 1) {
             $faculty = Faculty::find($this->faculty_id);
             $department = Department::find($faculty->department_id);

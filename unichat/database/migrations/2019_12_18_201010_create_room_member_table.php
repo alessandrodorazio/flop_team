@@ -18,7 +18,7 @@ class CreateRoomMemberTable extends Migration
             $table->unsignedBigInteger('user_id');
             $table->unsignedBigInteger('room_id');
 
-            $table->boolean('archived')->default('false');
+            $table->boolean('archived')->default(false);
 
             $table->timestamps();
 

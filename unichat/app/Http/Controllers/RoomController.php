@@ -29,7 +29,7 @@ class RoomController extends Controller
         $room->type = $request->type;
         $room->university_id = auth()->user()->getUniversityId();
         $room->save();
-        $room->users()->attach([439, 2109]);
+        $room->users()->attach($request->users);
 
         return (new Responser())->success()->item('room', $room)->response();
     }

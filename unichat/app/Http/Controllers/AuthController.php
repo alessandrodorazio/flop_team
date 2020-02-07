@@ -30,6 +30,13 @@ class AuthController extends Controller
             'surname' => $request->surname
         ]);
 
+        if($request->university_id && $request->type != 1) {
+            $user->university_id = $request->university_id;
+        } elseif($request->faculty_id) {
+            $user->faculty_id = $request->faculty_id;
+        }
+        $user->save();
+
         $token = auth('api')->login($user);
 
         return $this->respondWithToken($token);
