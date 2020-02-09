@@ -30,7 +30,7 @@ class UserController extends Controller
         $user->update($request->all());
     }
 
-    public function delete($user_id) {
+    public function destroy($user_id) {
         $user = User::find($user_id);
         $user->delete();
     }

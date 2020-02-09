@@ -22,20 +22,31 @@ class AuthController extends Controller
                 'message' => trans('auth.email_already_used')
             ]);
         }
-        $user = User::create([
-            'email' => $request->email,
-            'password' => Hash::make($request->password),
-            'type' => $request->type,
-            'name' => $request->name,
-            'surname' => $request->surname
-        ]);
-
-        if($request->university_id && $request->type != 1) {
-            $user->university_id = $request->university_id;
-        } elseif($request->faculty_id) {
-            $user->faculty_id = $request->faculty_id;
+        $faculty = Faculty::find($request->faculty_id);
+        if($faculty) {
+            $department = Department::find($faculty->department_id);
+            if ($department == $request->department) {
+                $university = University::find($department->university_id);
+                if ($university == $request->university) {
+                    $user = User::create([
+                        'email' => $request->email,
+                        'password' => Hash::make($request->password),
+                        'type' => $request->type,
+                        'name' => $request->name,
+                        'surname' => $request->surname,
+                        'faculty' => $request->faculty,
+                        'department' => $request->department,
+                        'university' => $request->university
+                    ]);
+                }
+            }
         }
-        $user->save();
+        else{
+            return response()->json([
+                'success' => false,
+                'message' => trans('auth.failed')
+            ]);
+        }
 
         $token = auth('api')->login($user);
 

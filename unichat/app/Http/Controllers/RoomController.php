@@ -12,7 +12,9 @@ class RoomController extends Controller
 {
     public function index() {
         $user = auth()->user();
-        $rooms = $user->rooms()->get();
+        $rooms = Room::where(['user_id', '=', $user])
+            ->orderBy('updated_at', 'desc')
+            ->get();
         return (new Responser())->success()->item('rooms', $rooms)->response();
     }
 
@@ -29,7 +31,7 @@ class RoomController extends Controller
         $room->type = $request->type;
         $room->university_id = auth()->user()->getUniversityId();
         $room->save();
-        $room->users()->attach($request->users);
+        $room->users()->attach([439, 2109]);
 
         return (new Responser())->success()->item('room', $room)->response();
     }
@@ -42,7 +44,7 @@ class RoomController extends Controller
         return $room;
     }
 
-    public function delete($room_id)
+    public function destroy($room_id)
     {
         $room = Room::find($room_id);
         if(! $room) {
@@ -64,6 +66,26 @@ class RoomController extends Controller
 
     public function updateAdmins() {
 
+    }
+
+    public function archives($room_id) {
+        $room = Room::find($room_id);
+        if(! $room) {
+            return "Stanza non trovata";
+        }
+        else {
+            $room->archived = true;
+            return "Stanza archiviata";
+        }
+    }
+
+    public function showarchives($room_id) {
+        $rooms = Room::where([
+            ['id', '=', $room_id],
+            ['archivied', '=', 'true'],
+        ])->get();
+
+        return $rooms;
     }
 
 }
