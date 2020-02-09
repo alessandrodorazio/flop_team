@@ -25,19 +25,28 @@ Route::get('/auth/info', 'AuthController@me')->name('info');
 
 Route::resource('/users', 'UserController')->only(['index', 'show', 'store', 'update', 'delete']);
 Route::post('/users/filter', 'UserController@filterUsers');
+Route::post('/users/{user_id}/destroy', 'UserController@destroy')->name('user.destroy');
 
-Route::resource('/universities', 'UniversityController')->only(['index', 'show', 'update', 'delete']);
+Route::resource('/universities', 'UniversityController')->only(['index', 'show', 'store', 'update', 'delete']);
 
 Route::resource('/universities/{university_id}/departments', 'DepartmentController')->only(['index', 'show', 'store', 'update', 'delete']);
+Route::post('/departments/{department_id}/destroy', 'DepartmentController@destroy')->name('department.destroy');
 
 Route::resource('/faculties', 'FacultyController')->only(['index', 'show', 'store', 'update', 'delete']);
+Route::post('/faculties/{faculty_id}/destroy', 'FacultyController@destroy')->name('faculty.destroy');
 
 Route::resource('/rooms', 'RoomController')->only(['index', 'show', 'store', 'update', 'delete']);
 Route::post('/rooms/{room_id}/user/{user_id}/mute', 'RoomController@muteUser')->name('rooms.mute_user');
 Route::post('/rooms/{room_id}/admins/update', 'RoomController@updateAdmins')->name('rooms.update_admins');
 Route::post('/rooms/find', 'RoomController@find')->name('rooms.find');
+Route::post('/rooms/{room_id}/destroy', 'RoomController@destroy')->name('rooms.destroy');
+Route::post('/rooms/{room_id}/archives', 'RoomController@archives')->name('rooms.archives');
+Route::post('/rooms/{room_id}/showarchives', 'RoomController@showarchives')->name('rooms.showarchives');
 
 Route::resource('/rooms/{room_id}/messages', 'MessageController')->only(['show', 'store', 'update', 'delete']);
+Route::post('/messages/{word}/find', 'MessageController@find')->name('message.find');
+Route::post('/rooms/{room_id}/seen', 'MessageController@seen')->name('message.seen');
+Route::post('/rooms/{room_id}/importantmessages', 'MessageController@importantmessages')->name('message.importantmessages');
 
 
 Route::post('/admin/ban', 'AdminController@ban_user')->name('admin.ban_user');
