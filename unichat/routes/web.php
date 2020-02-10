@@ -77,12 +77,23 @@ Route::get('/rooms/create', function() {
     return View::make('rooms.create', compact(['users']));
 })->name('view.rooms.create');
 
-Route::post('/rooms', function() {
-
+Route::post('/rooms', function(Request $request) {
+    $req = Request::create('/api/rooms', 'POST', $request->toArray());
+    $req->headers->set('Authorization', 'Bearer '.session('token'));
+    $res = app()->handle($req);
+    $responseBody = json_decode($res->getContent(), true);
+    return redirect(config('app.url') . '/rooms');
 })->name('view.rooms.store');
 
-Route::get('/rooms/{room_id}', function() {
 
+Route::get('/rooms/{room_id}', function($room_id) {
+    $req = Request::create('/api/rooms/'.$room_id, 'GET');
+    $req->headers->set('Authorization', 'Bearer '.session('token'));
+    $res = app()->handle($req);
+    $responseBody = json_decode($res->getContent(), true);
+    $room = $responseBody['room'];
+    $messages = $responseBody['messages'];
+    return View::make('rooms.show', compact(['room', ['messages']]));
 })->name('view.rooms.show');
 
 Route::post('/messages/search', function() {

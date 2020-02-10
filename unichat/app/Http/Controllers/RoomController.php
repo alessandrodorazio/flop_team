@@ -20,18 +20,19 @@ class RoomController extends Controller
 
     public function show($room_id) {
         $room = Room::find($room_id);
-        return (new Responser())->success()->item('room', $room)->response();
+        $messages = Message::where('room_id', $room_id)->get();
+        return (new Responser())->success()->item('room', $room)->item('messages', $messages)->response();
     }
 
     public function store(Request $request) {
-        $members = $request->only('members'); //TODO
         $room = new Room;
-        $room->name = $request->name;
-        $room->description = $request->description;
-        $room->type = $request->type;
+        $room->name = $request['name'];
+        $room->description = $request['description'];
+        $room->type = $request['type'];
         $room->university_id = auth()->user()->getUniversityId();
         $room->save();
-        $room->users()->attach([439, 2109]);
+        $room->users()->attach(auth()->id());
+        $room->users()->attach($request['users']);
 
         return (new Responser())->success()->item('room', $room)->response();
     }

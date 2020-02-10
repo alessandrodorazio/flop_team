@@ -9,7 +9,7 @@
 <div class="row">
     <div class="col-md-3"></div>
     <div class="col-md-6">
-        <form action="{{ route('view.rooms.store') }}" method="post">
+        <form action="http://127.0.0.1:8000/rooms" method="post">
             @csrf
             <div class="form-group">
                 <label>Tipo</label>
@@ -34,7 +34,7 @@
                 <label>Partecipanti</label>
                 <select name="users[]" id="users" class="form-control" multiple>
                     @foreach($users as $user)
-                        <option value="{{ $user->id }}">{{ $user->name . ' ' . $user->surname }}</option>
+                        <option value="{{ $user['id'] }}">{{ $user['name'] . ' ' . $user['surname'] }}</option>
                     @endforeach
                 </select>
             </div>
