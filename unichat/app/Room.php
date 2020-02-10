@@ -43,11 +43,34 @@ class Room extends Model
         return $this->belongsToMany(User::class, 'room_members', 'room_id', 'user_id', 'id', 'id');
     }
 
+    public static function realName($room_id) {
+        $room = Room::find($room_id);
+        if($room->type !== 1) {
+            return $room->name;
+        } else {
+            $u = $room->users()->where('user_id', '<>', auth()->id())->first();
+            return 'Chat diretta con '.User::getFullName($u->id);
+        }
+    }
+
     public function getMessagesAttribute() {
-        return Message::where('room_id', $this->id)->get();
+        return Message::where('room_id', $this->id)->orderBy('created_at', 'desc')->get();
     }
 
     public function getMembersAttribute() {
         return $this->users()->get();
+    }
+
+    public static function getLastMessage($room_id) {
+        $message = Message::where('room_id', $room_id)->orderBy('created_at', 'desc')->first();
+        return $message->created_at->format('d/m/Y H:i');
+    }
+
+    public static function realDescription($room_id) {
+        $room = Room::find($room_id);
+        if($room->type != 1) {
+            return $room->description;
+        }
+        return '';
     }
 }

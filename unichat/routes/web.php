@@ -24,8 +24,11 @@ Route::get('/auth/register', function() {
 
 Route::post('/auth/register', function(Request $request) {
     $req = Request::create('/api/auth/register', 'POST', $request->toArray());
-    $res = Route::dispatch($req);
-    session(['token' => $res->access_token]);
+    $res = json_decode(Route::dispatch($req)->getContent());
+    if($res->access_token)
+        session(['token' => $res->access_token]);
+    else
+        return "error";
     return redirect(config('app.url') . '/rooms');
 })->name('view.register.post');
 
@@ -92,9 +95,17 @@ Route::get('/rooms/{room_id}', function($room_id) {
     $res = app()->handle($req);
     $responseBody = json_decode($res->getContent(), true);
     $room = $responseBody['room'];
+    $room = \App\Room::find($room['id']);
     $messages = $responseBody['messages'];
     return View::make('rooms.show', compact(['room', ['messages']]));
 })->name('view.rooms.show');
+
+Route::post('/rooms/{room_id}/messages/send', function(Request $request, $room_id) {
+    $req = Request::create('/api/rooms/'.$room_id.'/messages', 'POST', $request->toArray());
+    $req->headers->set('Authorization', 'Bearer '.session('token'));
+    $res = app()->handle($req);
+    return redirect(config('app.url') . '/rooms/' . $request->room_id);
+});
 
 Route::post('/messages/search', function() {
 

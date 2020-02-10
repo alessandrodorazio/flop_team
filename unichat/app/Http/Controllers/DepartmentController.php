@@ -3,13 +3,14 @@
 namespace App\Http\Controllers;
 
 use App\Department;
+use App\Http\Responser;
 use Illuminate\Http\Request;
 
 class DepartmentController extends Controller
 {
     //
     public function index() {
-
+        return (new Responser())->success()->item('departments', Department::all())->response();
     }
 
     public function show() {

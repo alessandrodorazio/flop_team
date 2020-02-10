@@ -12,7 +12,7 @@
 
     @foreach($rooms as $room)
         <p>
-            <a href="http://127.0.0.1:8000/rooms/{{ $room['id'] }}">{{ $room['name'] }}</a>
+            <a href="http://127.0.0.1:8000/rooms/{{ $room['id'] }}">{{ \App\Room::realName($room['id']) }} </a> <span class="small">{{ count($room['messages'])?'Ultimo messaggio inviato il '.\App\Room::getLastMessage($room['id']):''  }}</span>
         </p>
     @endforeach
 

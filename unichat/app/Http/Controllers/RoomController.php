@@ -11,10 +11,7 @@ use Illuminate\Http\Request;
 class RoomController extends Controller
 {
     public function index() {
-        $user = auth()->user();
-        $rooms = Room::where(['user_id', '=', $user])
-            ->orderBy('updated_at', 'desc')
-            ->get();
+        $rooms = auth()->user()->rooms()->get();
         return (new Responser())->success()->item('rooms', $rooms)->response();
     }
 

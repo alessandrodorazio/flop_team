@@ -26,17 +26,17 @@
             <ul class="navbar-nav">
                 @if(! session('token'))
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('view.register.get') }}">Registrati</a>
+                        <a class="nav-link" href="http://127.0.0.1:8000/auth/register">Registrati</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('view.login.get') }}">Login</a>
+                        <a class="nav-link" href="http://127.0.0.1:8000/auth/login">Login</a>
                     </li>
                 @else
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('view.rooms.index') }}">Stanze</a>
+                        <a class="nav-link" href="http://127.0.0.1:8000/rooms">Stanze</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('view.users.index') }}">Utenti</a>
+                        <a class="nav-link" href="http://127.0.0.1:8000/users">Utenti</a>
                     </li>
                 @endif
             </ul>

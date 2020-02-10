@@ -24,6 +24,7 @@ class CreateUsersTable extends Migration
             $table->string('phone_number')->nullable();
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
+            $table->integer('course_year')->nullable();
             $table->string('password');
             $table->boolean('verified')->default(false);
             $table->date('ban_expiration')->nullable();

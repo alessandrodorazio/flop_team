@@ -105,4 +105,9 @@ class User extends Authenticatable implements JWTSubject
         $department = Department::find($faculty->department_id);
         return $department->id;
     }
+
+    static public function getFullName($user_id) {
+        $user = User::find($user_id);
+        return $user->name . ' ' . $user->surname;
+    }
 }

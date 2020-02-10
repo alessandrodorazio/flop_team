@@ -2,8 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Department;
+use App\Faculty;
 use App\Http\Responser;
 use App\Models\User\StaffPermissions;
+use App\University;
 use App\User;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
@@ -22,31 +25,20 @@ class AuthController extends Controller
                 'message' => trans('auth.email_already_used')
             ]);
         }
-        $faculty = Faculty::find($request->faculty_id);
-        if($faculty) {
-            $department = Department::find($faculty->department_id);
-            if ($department == $request->department) {
-                $university = University::find($department->university_id);
-                if ($university == $request->university) {
-                    $user = User::create([
-                        'email' => $request->email,
-                        'password' => Hash::make($request->password),
-                        'type' => $request->type,
-                        'name' => $request->name,
-                        'surname' => $request->surname,
-                        'faculty' => $request->faculty,
-                        'department' => $request->department,
-                        'university' => $request->university
-                    ]);
-                }
-            }
+        $user = User::create([
+            'email' => $request->email,
+            'password' => Hash::make($request->password),
+            'type' => $request->type,
+            'name' => $request->name,
+            'surname' => $request->surname
+        ]);
+
+        if($request->university_id && $request->type != 1) {
+            $user->university_id = $request->university_id;
+        } elseif($request->faculty_id) {
+            $user->faculty_id = $request->faculty_id;
         }
-        else{
-            return response()->json([
-                'success' => false,
-                'message' => trans('auth.failed')
-            ]);
-        }
+        $user->save();
 
         $token = auth('api')->login($user);
 
