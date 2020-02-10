@@ -16,10 +16,10 @@ class UserController extends Controller
     public function show($user_id) {
         $user = User::find($user_id);
         if(! $user) {
-            return "Utente non trovato";
+            return (new Responser())->failed()->item('message', 'Utente non trovato')->response();
         }
         if($user->getUniversityId() === auth()->user()->getUniversityId()) {
-            return $user;
+            return (new Responser())->success()->item('user', $user)->response();
         } else {
             return "Utente non trovato";
         }

@@ -55,6 +55,7 @@ class User extends Authenticatable implements JWTSubject
     protected $fillable = ['email', 'password', 'type', 'name', 'surname'];
     protected $guarded = ['password'];
     protected $hidden = ['password', 'remember_token', 'created_at', 'updated_at'];
+    protected $appends = ['social'];
 
     // Rest omitted for brevity
 
@@ -82,6 +83,10 @@ class User extends Authenticatable implements JWTSubject
         return $this->belongsToMany(Room::class, 'room_members', 'user_id', 'room_id', 'id', 'id');
     }
 
+    public function social() {
+        return $this->hasMany(Social::class, 'user_id', 'id');
+    }
+
     public function getUniversityId()
     {
         if($this->type === 1) {
@@ -104,6 +109,11 @@ class User extends Authenticatable implements JWTSubject
         $faculty = Faculty::find($this->faculty_id);
         $department = Department::find($faculty->department_id);
         return $department->id;
+    }
+
+    public function getSocialAttribute() {
+        $social = $this->social()->get();
+        return $social;
     }
 
     static public function getFullName($user_id) {

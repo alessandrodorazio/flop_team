@@ -58,8 +58,13 @@ Route::get('/users', function() {
     return View::make('users.index', compact(['users']));
 })->name('view.users.index');
 
-Route::get('/users/{user_id}', function() {
-    return View::make('users.show');
+Route::get('/users/{user_id}', function($user_id) {
+    $request = Request::create('api/users/'.$user_id, 'GET');
+    $request->headers->set('Authorization', 'Bearer '.session('token'));
+    $response = app()->handle($request);
+    $responseBody = json_decode($response->getContent(), true);
+    $user = $responseBody['user'];
+    return View::make('users.show', compact(['user']));
 });
 
 Route::get('/rooms', function() {
