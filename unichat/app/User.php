@@ -99,11 +99,6 @@ class User extends Authenticatable implements JWTSubject
         }
     }
 
-    public function getType()
-    {
-        return $this->type;
-    }
-
     public function getDepartmentId()
     {
         $faculty = Faculty::find($this->faculty_id);
