@@ -21,18 +21,25 @@ class UserController extends Controller
         if($user->getUniversityId() === auth()->user()->getUniversityId()) {
             return (new Responser())->success()->item('user', $user)->response();
         } else {
-            return "Utente non trovato";
+            return (new Responser())->failed();
         }
     }
 
     public function update(Request $request, $user_id) {
         $user = User::find($user_id);
         $user->update($request->all());
+        return (new Responser())->success()->item('user', $user)->response();
     }
 
     public function destroy($user_id) {
         $user = User::find($user_id);
-        $user->delete();
+        if(! $user){
+            return (new Responser())->failed();
+        }
+        else {
+            $user->delete();
+            return (new Responser())->success();
+        }
     }
 
     public function filterUsers(Request $request) {

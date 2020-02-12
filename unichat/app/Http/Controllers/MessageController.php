@@ -34,28 +34,15 @@ class MessageController extends Controller
 
     }
 
-    public function find($word) {
-        $user = auth()->user();
-        $messages = Message::where([
-            ['user_id', '=', $user],
-            ['text', '=', $word],
-        ])->get();
-
-        return $messages;
-    }
-
-    public function seen($room_id) {
-        $user = auth()->user();
-        $messages = Message::where([
-            ['room_id', '=', $room_id],
-            ['user_id', '<>', $user],
-            ['seen', '=', 'false'],
-        ])->get();
-        foreach ($messages as $message){
-            $messages->seen = true;
+    public function find($message_id) {
+        $message = Message::find($message_id);
+        if(! $message){
+            return (new Responser())->failed();
+        }
+        else {
+            return (new Responser())->success()->item('message', $message)->response();
         }
 
-        return 'Succes';
     }
 
     public function importantmessages($room_id) {

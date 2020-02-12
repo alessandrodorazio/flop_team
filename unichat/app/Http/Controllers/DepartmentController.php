@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\User;
 use App\Department;
 use App\Http\Responser;
 use Illuminate\Http\Request;
@@ -18,11 +19,13 @@ class DepartmentController extends Controller
     }
 
     public function store(Request $request, $university_id) {
-        if(auth()->user()->getType() == 1)
-            return "I tuoi diritti non ti permettono di creare una facoltà";
+        $user = User::find(auth()->id());
+        if($user->type == 1) {
+            return (new Responser())->failed();
+        }
         else {
             $department = new Department;
-            if (auth()->user()->getType() == 10) {
+            if ($user->type == 10) {
                 $department->name = $request->name;
                 $department->university_id = $university_id;
             } else{
@@ -30,9 +33,9 @@ class DepartmentController extends Controller
                 $department->university_id = auth()->user()->getUniversityId();
             }
             $department->save();
+            return (new Responser())->success()->item('department', $department)->response();
         }
 
-        return (new Responser())->success()->item('department', $department)->response();
     }
 
     public function update() {
@@ -43,11 +46,11 @@ class DepartmentController extends Controller
     {
         $department = Department::find($department_id);
         if(! $department) {
-            return "Dipartimento non trovato";
+            return (new Responser())->failed();
         }
         else {
             $department->delete();
-            return "Dipartimento eliminato";
+            return (new Responser())->success();
         }
     }
 }

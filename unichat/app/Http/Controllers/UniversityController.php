@@ -19,30 +19,29 @@ class UniversityController extends Controller
     }
 
     public function store(Request $request) {
-        if(auth()->user()->getType() == 10) {
+        if(auth()->user()->type == 10) {
             $university = new University;
             $university->name = $request->name;
             $university->save();
+            return (new Responser())->success()->item('university', $university)->response();
         }
         else
-            return "I tuoi diritti non ti permettono di creare un'università";
-
-        return (new Responser())->success()->item('university', $university)->response();
+            return (new Responser())->failed();
     }
 
     public function update() {
 
     }
 
-    public function delete($university_id)
+    public function destroy($university_id)
     {
         $university = University::find($university_id);
         if(! $university){
-            return "Università non trovata";
+            return (new Responser())->failed();
         }
         else{
             $university->delete();
-            return "Università eliminata";
+            return (new Responser())->success();
         }
     }
 }

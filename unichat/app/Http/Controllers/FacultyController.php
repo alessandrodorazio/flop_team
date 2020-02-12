@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Faculty;
+use App\Http\Responser;
 use Illuminate\Http\Request;
 
 class FacultyController extends Controller
@@ -17,22 +18,22 @@ class FacultyController extends Controller
 
     }
 
-    public function store(Request $request, $department_id) {
-        if(auth()->user()->getType() == 1)
-            return "I tuoi diritti non ti permettono di creare una facoltà";
+    public function store(Request $request) {
+        if(auth()->user()->type == 1)
+            return (new Responser())->failed();
         else{
             $faculty = new Faculty;
-            if (auth()->user()->getType() == 10) {
+            if (auth()->user()->type == 10) {
                 $faculty->name = $request->name;
-                $faculty->department_id = $department_id;
+                $faculty->department_id = $request->department_id;
             } else {
                 $faculty->name = $request->name;
                 $faculty->department_id = auth()->user()->getDepartmentId();
                 }
             $faculty->save();
+            return (new Responser())->success()->item('faculty', $faculty)->response();
         }
 
-        return (new Responser())->success()->item('faculty', $faculty)->response();
     }
 
     public function update()
@@ -44,11 +45,11 @@ class FacultyController extends Controller
     {
         $faculty = Faculty::find($faculty_id);
         if(! $faculty) {
-            return "Facoltà non trovata";
+            return (new Responser())->failed();
         }
         else {
             $faculty->delete();
-            return "Facoltà eliminata";
+            return (new Responser())->success();
         }
     }
 }
