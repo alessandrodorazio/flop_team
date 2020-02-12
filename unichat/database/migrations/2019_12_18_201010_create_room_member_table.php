@@ -24,8 +24,8 @@ class CreateRoomMemberTable extends Migration
 
             $table->primary(['user_id', 'room_id']);
 
-            $table->foreign('user_id')->references('id')->on('users');
-            $table->foreign('room_id')->references('id')->on('rooms');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            $table->foreign('room_id')->references('id')->on('rooms')->onDelete('cascade');
         });
     }
 
