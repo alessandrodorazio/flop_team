@@ -28,6 +28,7 @@ Route::post('/users/filter', 'UserController@filterUsers');
 Route::post('/users/{user_id}/destroy', 'UserController@destroy')->name('user.destroy');
 
 Route::resource('/universities', 'UniversityController')->only(['index', 'show', 'store', 'update', 'delete']);
+Route::post('/universities/{university_id}/destroy', 'UniversityController@destroy')->name('university.destroy');
 
 Route::resource('/universities/{university_id}/departments', 'DepartmentController')->only(['index', 'show', 'store', 'update', 'delete']);
 Route::post('/departments/{department_id}/destroy', 'DepartmentController@destroy')->name('department.destroy');
@@ -44,8 +45,7 @@ Route::post('/rooms/{room_id}/archives', 'RoomController@archives')->name('rooms
 Route::post('/rooms/{room_id}/showarchives', 'RoomController@showarchives')->name('rooms.showarchives');
 
 Route::resource('/rooms/{room_id}/messages', 'MessageController')->only(['show', 'store', 'update', 'delete']);
-Route::post('/messages/{word}/find', 'MessageController@find')->name('message.find');
-Route::post('/rooms/{room_id}/seen', 'MessageController@seen')->name('message.seen');
+Route::post('/messages/{message_id}/find', 'MessageController@find')->name('message.find');
 Route::post('/rooms/{room_id}/importantmessages', 'MessageController@importantmessages')->name('message.importantmessages');
 
 
