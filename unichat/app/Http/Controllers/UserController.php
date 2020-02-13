@@ -42,7 +42,7 @@ class UserController extends Controller
         }
     }
 
-    public function filterUsers(Request $request) {
+    public function search(Request $request) {
         if($request->name) {
             $users = User::where('name', $request->name)->get();
         }
