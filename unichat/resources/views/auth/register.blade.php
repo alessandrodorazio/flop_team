@@ -69,12 +69,12 @@
 @section('script')
     <script>
         function changeUniversity() {
-            fetch('{{ route('universities.index') }}/' + $("#university").val() + '/departments').then(function(response) {
+            fetch('http://127.0.0.1:8000/universities/' + $("#university").val() + '/allFaculties').then(function(response) {
                 return response.json()
             }).then(function(myBlob) {
                 console.log();
                 $('#faculty').html('');
-                myBlob.departments.forEach(element => {
+                myBlob.faculties.forEach(element => {
                     $('#faculty').append('<option value="' + element.id + '">' + element.name + '</option>');
                 });
             });

@@ -17,6 +17,19 @@ Route::get('/', function() {
     return View::make('home');
 })->name('view.home');
 
+Route::get('/universities/{university_id}/allFaculties', function($university_id) {
+    $university = \App\University::find($university_id);
+    $departments = \App\Department::where('university_id', $university_id)->get();
+    $faculties = [];
+    foreach($departments as $d) {
+        $facultiesA = \App\Faculty::where('department_id', $d->id)->get();
+        foreach($facultiesA as $f) {
+            $faculties[] = $f;
+        }
+    }
+    return (new \App\Http\Responser())->success()->item('faculties', $faculties)->response();
+});
+
 Route::get('/auth/register', function() {
     $universities = \App\University::all();
     return View::make('auth.register', compact(['universities']));
