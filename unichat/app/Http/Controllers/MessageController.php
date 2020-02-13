@@ -47,11 +47,11 @@ class MessageController extends Controller
 
     public function importantmessages($room_id) {
         $messages = Message::where([
-            ['room_id', '=', $room_id],
-            ['important', '=', 'true'],
+            ['room_id', $room_id],
+            ['important', true],
         ])->get();
 
-        return $messages;
+        return (new Responser())->success()->item('messages', $messages)->response();
     }
 
 }

@@ -73,4 +73,14 @@ class Room extends Model
         }
         return '';
     }
+
+    public static function isArchived($room_id) {
+        $user_id = auth()->id();
+        $query = \DB::table('room_members')->where([
+            ['user_id', $user_id],
+            ['room_id', $room_id],
+            ['archived', 1]
+        ])->count();
+        return $query;
+    }
 }

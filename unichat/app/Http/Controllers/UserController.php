@@ -20,9 +20,9 @@ class UserController extends Controller
         }
         if($user->getUniversityId() === auth()->user()->getUniversityId()) {
             return (new Responser())->success()->item('user', $user)->response();
-        } else {
-            return (new Responser())->failed();
         }
+
+        return (new Responser())->failed()->item('user', 0)->response();
     }
 
     public function update(Request $request, $user_id) {

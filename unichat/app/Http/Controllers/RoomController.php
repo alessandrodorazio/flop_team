@@ -11,7 +11,8 @@ use Illuminate\Http\Request;
 class RoomController extends Controller
 {
     public function index() {
-        $rooms = auth()->user()->rooms()->get();
+        $user = User::find(auth()->id());
+        $rooms = $user->rooms()->where('room_members.archived', 0)->get();
         return (new Responser())->success()->item('rooms', $rooms)->response();
     }
 
@@ -20,15 +21,13 @@ class RoomController extends Controller
         $messages = Message::where('room_id', $room_id)->get();
 
         $user = auth()->user();
-        $messages = Message::where([
+        Message::where([
             ['room_id', '=', $room_id],
             ['user_id', '<>', $user],
             ['seen', '=', 0],
-        ])->get();
-        foreach ($messages as $message){
-            $messages->seen = 1;
-        }
-        $messages->save();
+        ])->update(['seen' => 1]);
+
+        $messages = Message::where('room_id', $room_id)->get();
 
         return (new Responser())->success()->item('room', $room)->item('messages', $messages)->response();
     }
@@ -61,10 +60,8 @@ class RoomController extends Controller
         if(! $room) {
             return (new Responser())->failed();
         }
-        else {
-            $room->delete();
-            return (new Responser())->success();
-        }
+        $room->delete();
+        return (new Responser())->success();
     }
 
     public function find() {
@@ -80,25 +77,16 @@ class RoomController extends Controller
     }
 
     public function archives($room_id) {
+        \DB::table('room_members')->where([['user_id', auth()->id()],['room_id', $room_id]])->update(['archived' => 1]);
         $room = Room::find($room_id);
-        if(! $room) {
-            return "Stanza non trovata";
-        }
-        else {
-            $room->archived = 1;
-            $room->save();
-            return "Stanza archiviata";
-        }
+        return (new Responser())->success()->item('room', $room)->response();
 
     }
 
-    public function showarchives($room_id) {
-        $rooms = Room::where([
-            ['id', '=', $room_id],
-            ['archivied', '=', 'true'],
-        ])->get();
-
-        return $rooms;
+    public function archived() {
+        $user = User::find(auth()->id());
+        $rooms = $user->rooms()->where('room_members.archived', 1)->get();
+        return (new Responser())->item('rooms', $rooms)->response();
     }
 
 }

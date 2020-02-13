@@ -36,7 +36,13 @@
                         <a class="nav-link" href="http://127.0.0.1:8000/rooms">Stanze</a>
                     </li>
                     <li class="nav-item">
+                        <a href="http://127.0.0.1:8000/rooms/archived" class="nav-link">Archiviate</a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link" href="http://127.0.0.1:8000/users">Utenti</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="http://127.0.0.1:8000/users/{{auth()->id()}}">Il mio profilo</a>
                     </li>
                 @endif
             </ul>

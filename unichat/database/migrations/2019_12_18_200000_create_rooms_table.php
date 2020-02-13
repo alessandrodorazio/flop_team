@@ -18,7 +18,6 @@ class CreateRoomsTable extends Migration
             $table->unsignedBigInteger('university_id');
 
             $table->integer('type');
-            $table->boolean('archived')->default(false);
             $table->string('name')->nullable();
             $table->string('description')->nullable();
             $table->timestamps();
