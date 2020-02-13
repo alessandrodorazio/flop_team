@@ -27,5 +27,5 @@ use Illuminate\Database\Eloquent\Model;
  */
 class Social extends Model
 {
-    protected $fillable = ['name', 'value'];
+    protected $fillable = ['name', 'value',' user_id'];
 }
