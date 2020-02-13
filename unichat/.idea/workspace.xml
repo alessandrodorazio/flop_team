@@ -3,14 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="cd89d7a6-9ee4-45ed-93a8-7d75a1cc3c76" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/MessageController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/MessageController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/SocialController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/SocialController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/rooms/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/rooms/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/rooms/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/rooms/show.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/users/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/users/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/users/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/users/show.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/UserController.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -217,7 +210,7 @@
       <workItem from="1581549546513" duration="4449000" />
       <workItem from="1581587621262" duration="129000" />
       <workItem from="1581594044140" duration="2416000" />
-      <workItem from="1581604520575" duration="943000" />
+      <workItem from="1581604520575" duration="1593000" />
     </task>
     <servers />
   </component>
@@ -249,10 +242,10 @@
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state x="498" y="287" width="799" height="614" key="find.popup/0.0.1680.1050@0.0.1680.1050" timestamp="1581595627015" />
-    <state x="505" y="233" width="838" height="676" key="search.everywhere.popup" timestamp="1581605343589">
+    <state x="505" y="233" width="838" height="676" key="search.everywhere.popup" timestamp="1581605599971">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state x="505" y="233" width="838" height="676" key="search.everywhere.popup/0.0.1680.1050@0.0.1680.1050" timestamp="1581605343589" />
+    <state x="505" y="233" width="838" height="676" key="search.everywhere.popup/0.0.1680.1050@0.0.1680.1050" timestamp="1581605599971" />
     <state x="505" y="233" width="838" height="676" key="search.everywhere.popup/0.23.1680.974@0.23.1680.974" timestamp="1581098497030" />
   </component>
 </project>

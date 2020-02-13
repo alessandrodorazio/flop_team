@@ -43,24 +43,21 @@ class UserController extends Controller
     }
 
     public function search(Request $request) {
-        if($request->name) {
-            $users = User::where('name', $request->name)->get();
+        $users = User::select('*');
+        if($request->name != NULL) {
+            $users = $users->where('name', $request->name);
         }
-        if($request->surname) {
-            $users = User::where('surname', $request->surname)->get();
+        if($request->surname != NULL) {
+            $users = $users->where('surname', $request->surname);
         }
-        if($request->faculty_id) {
-            $users = User::where('faculty_id', $request->faculty_id)->get();
+        if($request->faculty_id != NULL) {
+            $users = $users->where('faculty_id', $request->faculty_id);
         }
-        if($request->course_year) {
-            $users = User::where('course_year', $request->course_year)->get();
+        if($request->course_year != NULL) {
+            $users = $users->where('course_year', $request->course_year);
         }
-        if(! $users) {
-            return (new Responser())->failed();
-        }
-        else{
-            return (new Responser())->success()->item('users', $users)->response();
-        }
+        $users = $users->get();
+        return (new Responser())->success()->item('users', $users)->response();
     }
 
 }
