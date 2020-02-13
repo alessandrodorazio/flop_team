@@ -26,6 +26,7 @@ Route::get('/auth/info', 'AuthController@me')->name('info');
 Route::resource('/users', 'UserController')->only(['index', 'show', 'store', 'update', 'delete']);
 Route::post('/users/filter', 'UserController@filterUsers');
 Route::post('/users/{user_id}/destroy', 'UserController@destroy')->name('user.destroy');
+Route::post('/users/filterUsers', 'UserController@filterUsers')->name('user.filter_users');
 
 Route::resource('/universities', 'UniversityController')->only(['index', 'show', 'store', 'update', 'delete']);
 Route::post('/universities/{university_id}/destroy', 'UniversityController@destroy')->name('university.destroy');
@@ -47,7 +48,9 @@ Route::get('/rooms/{room_id}/archives', 'RoomController@archives')->name('rooms.
 Route::resource('/rooms/{room_id}/messages', 'MessageController')->only(['show', 'store', 'update', 'delete']);
 Route::post('/messages/{message_id}/find', 'MessageController@find')->name('message.find');
 Route::get('/rooms/{room_id}/importantMessages', 'MessageController@importantmessages')->name('message.importantmessages');
+Route::get('/rooms/{room_id}/messages/{message_id}/important', 'MessageController@important')->name('message.important');
 
+Route::post('/users/social', 'SocialController@store')->name('social.store');
 
 Route::post('/admin/ban', 'AdminController@ban_user')->name('admin.ban_user');
 
