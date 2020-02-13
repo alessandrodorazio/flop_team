@@ -66,7 +66,7 @@ class RoomController extends Controller
 
     public function find(Request $request) {
         if($request->name) {
-            $rooms = Room::where('name', $request->name)->get();
+            $rooms = Room::where('name', 'like', '%'.$request->name.'%')->get();
         }
         if(! $rooms) {
             return (new Responser())->failed();

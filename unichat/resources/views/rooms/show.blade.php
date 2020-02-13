@@ -48,7 +48,7 @@
                     @foreach($messages as $message)
                         <p>
                             {{ \App\User::getFullName($message['user_id']) }} <span class="small">[{{ \Carbon\Carbon::parse($message['created_at'])->format('d/m/Y H:i') }}]</span>
-                            @if(! $message['important'])(<a href="http://127.0.0.1:8000/rooms/{{$room['id']}}/messages/{{$message['id']}}">Importante</a>)@endif : {{ $message['text'] }}
+                            @if(! $message['important'])(<a href="http://127.0.0.1:8000/rooms/{{$room['id']}}/messages/{{$message['id']}}/important">Importante</a>)@endif : {{ $message['text'] }}
                         </p>
                     @endforeach
                 </div>

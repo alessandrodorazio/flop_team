@@ -91,7 +91,6 @@ Route::get('/rooms', function() {
     $response = app()->handle($request);
     $responseBody = json_decode($response->getContent(), true);
     $rooms = $responseBody['rooms'];
-
     return View::make('rooms.index', compact(['rooms']));
 })->name('view.rooms.index');
 
@@ -117,7 +116,8 @@ Route::post('/rooms/search', function(Request $request) {
     $req->headers->set('Authorization', 'Bearer '.session('token'));
     $res = app()->handle($req);
     $responseBody = json_decode($res->getContent(), true);
-    return redirect(config('app.url') . '/rooms');
+    $rooms = $responseBody['rooms'];
+    return View::make('rooms.index', compact(['rooms']));
 })->name('view.rooms.search');
 
 Route::get('/rooms/{room_id}/archive', function($room_id) {
@@ -171,6 +171,13 @@ Route::post('/rooms/{room_id}/messages/send', function(Request $request, $room_i
     $req->headers->set('Authorization', 'Bearer '.session('token'));
     $res = app()->handle($req);
     return redirect(config('app.url') . '/rooms/' . $request->room_id);
+});
+
+Route::get('/rooms/{room_id}/messages/{message_id}/important', function($room_id, $message_id) {
+    $req = Request::create('/api/rooms/'.$room_id.'/messages/'.$message_id.'/important', 'GET');
+    $req->headers->set('Authorization', 'Bearer '.session('token'));
+    $res = app()->handle($req);
+    return redirect(config('app.url') . '/rooms/' . $room_id);
 });
 
 Route::post('/rooms/{room_id}/delete', function(Request $request, $room_id) {

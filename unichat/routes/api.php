@@ -41,7 +41,7 @@ Route::get('/rooms/archived', 'RoomController@archived')->name('rooms.archived')
 Route::resource('/rooms', 'RoomController')->only(['index', 'show', 'store', 'update', 'delete']);
 Route::post('/rooms/{room_id}/user/{user_id}/mute', 'RoomController@muteUser')->name('rooms.mute_user');
 Route::post('/rooms/{room_id}/admins/update', 'RoomController@updateAdmins')->name('rooms.update_admins');
-Route::post('/rooms/find', 'RoomController@find')->name('rooms.find');
+Route::post('/rooms/search', 'RoomController@find')->name('rooms.find');
 Route::post('/rooms/{room_id}/destroy', 'RoomController@destroy')->name('rooms.destroy');
 Route::get('/rooms/{room_id}/archives', 'RoomController@archives')->name('rooms.archives');
 
