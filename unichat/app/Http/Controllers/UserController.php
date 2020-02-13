@@ -43,6 +43,24 @@ class UserController extends Controller
     }
 
     public function filterUsers(Request $request) {
-
+        if($request->name) {
+            $users = User::where('name', $request->name)->get();
+        }
+        if($request->surname) {
+            $users = User::where('surname', $request->surname)->get();
+        }
+        if($request->faculty_id) {
+            $users = User::where('faculty_id', $request->faculty_id)->get();
+        }
+        if($request->course_year) {
+            $users = User::where('course_year', $request->course_year)->get();
+        }
+        if(! $users) {
+            return (new Responser())->failed();
+        }
+        else{
+            return (new Responser())->success()->item('users', $users)->response();
+        }
     }
+
 }

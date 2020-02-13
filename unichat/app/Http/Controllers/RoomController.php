@@ -64,8 +64,16 @@ class RoomController extends Controller
         return (new Responser())->success();
     }
 
-    public function find() {
-
+    public function find(Request $request) {
+        if($request->name) {
+            $rooms = Room::where('name', $request->name)->get();
+        }
+        if(! $rooms) {
+            return (new Responser())->failed();
+        }
+        else {
+            return (new Responser())->success()->item('rooms', $rooms)->response();
+        }
     }
 
     public function muteUser() {

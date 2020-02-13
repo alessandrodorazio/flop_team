@@ -54,4 +54,13 @@ class MessageController extends Controller
         return (new Responser())->success()->item('messages', $messages)->response();
     }
 
+    public function important($room_id, $message_id){
+        $message = Message::where([
+            ['id', '=', $message_id],
+            ['room_id', '=', $room_id],
+        ])->update(['important' => 1]);
+
+        return (new Responser())->success()->item('message', $message)->response();
+    }
+
 }
