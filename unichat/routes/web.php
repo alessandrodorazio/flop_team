@@ -39,6 +39,7 @@ Route::get('/auth/login', function() {
 Route::post('/auth/login', function(Request $request) {
     $req = Request::create('/api/auth/login', 'POST', $request->toArray());
     $res = json_decode(Route::dispatch($req)->getContent());
+    if(! isset($res->access_token)) return "login errato";
     session(['token' => $res->access_token]);
     return redirect(config('app.url') . '/rooms');
 })->name('view.login.post');
@@ -57,6 +58,23 @@ Route::get('/users', function() {
     $users = $responseBody['users'];
     return View::make('users.index', compact(['users']));
 })->name('view.users.index');
+
+Route::post('/users/search', function(Request $request) {
+    $req = Request::create('/api/users/search', 'POST', $request->toArray());
+    $req->headers->set('Authorization', 'Bearer '.session('token'));
+    $res = app()->handle($req);
+    $responseBody = json_decode($res->getContent(), true);
+    $users = $responseBody['users'];
+    return View::make('users.index', compact(['users']));
+});
+
+Route::post('/users/social/add', function(Request $request) {
+    $req = Request::create('/api/users/social/add', 'POST', $request->toArray());
+    $req->headers->set('Authorization', 'Bearer '.session('token'));
+    $res = app()->handle($req);
+    $responseBody = json_decode($res->getContent(), true);
+    return redirect(config('app.url') . '/users/'.auth()->id());
+});
 
 Route::get('/users/{user_id}', function($user_id) {
     $request = Request::create('api/users/'.$user_id, 'GET');
@@ -94,8 +112,25 @@ Route::post('/rooms', function(Request $request) {
     return redirect(config('app.url') . '/rooms');
 })->name('view.rooms.store');
 
+Route::post('/rooms/search', function(Request $request) {
+    $req = Request::create('/api/rooms/search', 'POST', $request->toArray());
+    $req->headers->set('Authorization', 'Bearer '.session('token'));
+    $res = app()->handle($req);
+    $responseBody = json_decode($res->getContent(), true);
+    return redirect(config('app.url') . '/rooms');
+})->name('view.rooms.search');
+
 Route::get('/rooms/{room_id}/archive', function($room_id) {
     $request = Request::create('api/rooms/'.$room_id.'/archive', 'GET');
+    $request->headers->set('Authorization', 'Bearer '.session('token'));
+    $res = app()->handle($request);
+    $responseBody = json_decode($res->getContent(), true);
+
+    return redirect(config('app.url') . '/rooms/'.$room_id);
+});
+
+Route::get('/rooms/{room_id}/dearchive', function($room_id) {
+    $request = Request::create('api/rooms/'.$room_id.'/dearchive', 'GET');
     $request->headers->set('Authorization', 'Bearer '.session('token'));
     $res = app()->handle($request);
     $responseBody = json_decode($res->getContent(), true);
@@ -115,15 +150,18 @@ Route::get('/rooms/archived', function() {
 Route::get('/rooms/{room_id}', function($room_id) {
     $req = Request::create('/api/rooms/'.$room_id, 'GET');
     $req->headers->set('Authorization', 'Bearer '.session('token'));
-    $res = json_decode(Route::dispatch($req)->getContent());
+    $response = app()->handle($req);
+    $responseBody = json_decode($response->getContent(), true);
 
-    $room = \App\Room::find($res->room->id);
-    $messages = $res->messages;
+    $room = \App\Room::find($responseBody['room']['id']);
+    $messages = $responseBody['messages'];
 
     $req = Request::create('/api/rooms/'.$room_id.'/importantMessages', 'GET');
     $req->headers->set('Authorization', 'Bearer '.session('token'));
-    $res = json_decode(Route::dispatch($req)->getContent());
-    $importantMessages = $res->messages;
+    $response = app()->handle($req);
+    $responseBody = json_decode($response->getContent(), true);
+
+    $importantMessages = $responseBody['messages'];
 
     return View::make('rooms.show', compact(['room', 'messages', 'importantMessages']));
 })->name('view.rooms.show');
@@ -144,6 +182,3 @@ Route::post('/rooms/{room_id}/delete', function(Request $request, $room_id) {
 });
 
 
-Route::post('/messages/search', function() {
-
-})->name('view.messages.search');

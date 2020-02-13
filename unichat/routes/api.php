@@ -47,10 +47,10 @@ Route::get('/rooms/{room_id}/archives', 'RoomController@archives')->name('rooms.
 
 Route::resource('/rooms/{room_id}/messages', 'MessageController')->only(['show', 'store', 'update', 'delete']);
 Route::post('/messages/{message_id}/find', 'MessageController@find')->name('message.find');
-Route::get('/rooms/{room_id}/importantMessages', 'MessageController@importantmessages')->name('message.importantmessages');
+Route::get('/rooms/{room_id}/importantMessages', 'MessageController@importantMessages')->name('message.importantmessages');
 Route::get('/rooms/{room_id}/messages/{message_id}/important', 'MessageController@important')->name('message.important');
 
-Route::post('/users/social', 'SocialController@store')->name('social.store');
+Route::post('/users/social/add', 'SocialController@store')->name('social.store');
 
 Route::post('/admin/ban', 'AdminController@ban_user')->name('admin.ban_user');
 

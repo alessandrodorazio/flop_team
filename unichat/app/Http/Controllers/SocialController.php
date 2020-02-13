@@ -10,8 +10,6 @@ use Illuminate\Http\Request;
 class SocialController
 {
     public function store(Request $request){
-        $user = auth()->user();
-
         $social = new Social;
 
         $social->name = $request->name;

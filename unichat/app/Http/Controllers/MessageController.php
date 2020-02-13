@@ -45,7 +45,7 @@ class MessageController extends Controller
 
     }
 
-    public function importantmessages($room_id) {
+    public function importantMessages($room_id) {
         $messages = Message::where([
             ['room_id', $room_id],
             ['important', true],
